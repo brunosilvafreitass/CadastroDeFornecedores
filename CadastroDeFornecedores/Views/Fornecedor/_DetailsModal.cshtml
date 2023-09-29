@@ -1,0 +1,67 @@
+﻿@model CadastroDeFornecedores.Models.FornecedorModel
+
+<div>
+    <div class="row">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="CNPJ" class="form-label"><strong>CNPJ</strong></label>
+                    <input asp-for="CNPJ" type="text" class="form-control" id="cleave-cnpj" disabled/>
+                </div>
+
+                <div>
+                    <label asp-for="RazaoSocial" class="form-label"><strong>RazaoSocial</strong></label>
+                    <input asp-for="RazaoSocial" class="form-control" id="razaoSocial" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="NomeFantasia" class="form-label"><strong>NomeFantasia</strong></label>
+                    <input asp-for="NomeFantasia" class="form-control" id="nomeFantasia" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Email" class="form-label"><strong>Email</strong></label>
+                    <input asp-for="Email" class="form-control" id="email" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Telefone" class="form-label"><strong>Telefone</strong></label>
+                    <input asp-for="Telefone" class="form-control" id="telefone" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="NomePessoaContato" class="form-label"><strong>NomePessoaContato</strong></label>
+                    <input asp-for="NomePessoaContato" class="form-control" disabled/>
+                </div>
+
+                <div class="col-md-8">
+                    <label asp-for="CEP" class="form-label"><strong>CEP</strong></label>
+                    <input asp-for="CEP" class="form-control" id="cep" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Rua" class="form-label"><strong>Logradouro</strong></label>
+                    <input asp-for="Rua" class="form-control" id="logradouro" disabled/>
+                </div>
+                <div class="col-md-5">
+                    <label asp-for="Complemento" class="form-label">Complemento</label>
+                    <input asp-for="Complemento" class="form-control" id="complemento" disabled/>
+                </div>
+                <div class="col-md-1">
+                    <label asp-for="Numero" class="form-label">Numero</label>
+                    <input asp-for="Numero" class="form-control" id="numero" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Bairro" class="form-label">Bairro</label>
+                    <input asp-for="Bairro" class="form-control" id="bairro" disabled/>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Municipio" class="form-label">Municipio</label>
+                    <input asp-for="Municipio" class="form-control" id="municipio" disabled/>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Estado" class="form-label">UF</label>
+                    <input asp-for="Estado" class="form-control" id="uf" disabled/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    </div>
+@*     <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Voltar</a>    *@

@@ -1,0 +1,97 @@
+﻿@model CadastroDeFornecedores.Models.FornecedorModel
+
+@{
+    ViewData["Title"] = "Criar Tarefa";
+}
+
+<h1>Adicionar Fornecedor</h1>
+
+<hr/>
+<div class="row">
+    <div @* class="col-md-6" *@>
+        <form class="row g-3" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-6">
+                <label asp-for="CNPJ" class="form-label">CNPJ</label>
+                <div class="input-group">
+                    <!-- Adicione uma div com a classe "input-group" -->
+                    <input asp-for="CNPJ" type="text" class="form-control" id="cleave-cnpj" />
+                    <button class="btn btn-primary" id="search">Consultar CNPJ</button> <!-- Use a classe "btn" para estilizar o botão -->
+                </div>
+                <span asp-validation-for="CNPJ" class="text-danger"></span>
+            </div>
+
+            
+            <div >
+                <label asp-for="RazaoSocial" class="form-label">RazaoSocial</label>
+                <input asp-for="RazaoSocial" class="form-control" id="razaoSocial" />
+                <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="NomeFantasia" class="form-label">NomeFantasia</label>
+                <input asp-for="NomeFantasia" class="form-control" id="nomeFantasia" />
+                <span asp-validation-for="NomeFantasia" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" id="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Telefone" class="form-label">Telefone</label>
+                <input asp-for="Telefone" class="form-control" id="telefone" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="NomePessoaContato" class="form-label">NomePessoaContato</label>
+                <input asp-for="NomePessoaContato" class="form-control" />
+                <span asp-validation-for="NomePessoaContato" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-8">
+                <label asp-for="CEP" class="form-label">CEP</label>
+                <input asp-for="CEP" class="form-control" id="cep"/>
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Rua" class="form-label">Logradouro</label>
+                <input asp-for="Rua" class="form-control" id="logradouro" />
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="col-md-5">
+                <label asp-for="Complemento" class="form-label">Complemento</label>
+                <input asp-for="Complemento" class="form-control" id="complemento"/>
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+            <div class="col-md-1">
+                <label asp-for="Numero" class="form-label">Numero</label>
+                <input asp-for="Numero" class="form-control" id="numero"/>
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Bairro" class="form-label">Bairro</label>
+                <input asp-for="Bairro" class="form-control" id="bairro"/>
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Municipio" class="form-label">Municipio</label>
+                <input asp-for="Municipio" class="form-control" id="municipio"/>
+                <span asp-validation-for="Municipio" class="text-danger"></span>
+            </div>
+            <div class="col-md-2">
+                <label asp-for="Estado" class="form-label">UF</label>
+                <input asp-for="Estado" class="form-control" id="uf"/>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group" style="padding-top:10px">
+                <input type="submit" value="Inserir" class="btn btn-primary btn-sm"/>
+                <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+

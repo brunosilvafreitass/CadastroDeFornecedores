@@ -1,0 +1,99 @@
+﻿@model IEnumerable<CadastroDeFornecedores.Models.FornecedorModel>
+@{
+    ViewData["Title"] = "Lista de Fornecedores";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Fornecedores</h1>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-success" asp-action="Create">Adicionar Fornecedor</a>
+    </div>
+    <br />
+    <table id="table-fornecedor" class="display table" style="width:100%">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.RazaoSocial)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.CNPJ)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.NomePessoaContato)
+                </th>
+                <th scope="col">
+
+                </th>
+@*                 <th scope="col">
+
+                </th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href='javascript:'" chamado-id="@item.Id" class="btn-detalhes-chamado" style="cursor: pointer;">
+
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.RazaoSocial
+                    </td>
+                    <td>
+                        @item.CNPJ
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td id="telefone">
+                        @item.Telefone
+                    </td>
+                    <td>
+                        @item.NomePessoaContato
+                    </td>
+
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        @* <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> *@
+                        <a href="javascript:" chamado-id="@item.Id" class="btn btn-outline-info btn-sm btn-detalhes-chamado">Detalhes</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    </td>
+@*                     <td>
+                        <a href="javascript:" chamado-id="@item.Id" class="btn btn-success btn-sm btn-detalhes-chamado" id="btn-detalhes-chamado">modal</a>
+                    </td> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*Modal Detalhes*@
+    <div id="modalDetalhesUsuario" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalhes Fornecedores</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                 
+                    <div id="DetalhesChamadoModal"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
